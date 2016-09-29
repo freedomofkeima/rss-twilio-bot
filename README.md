@@ -10,6 +10,11 @@ An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed
 <img src="https://raw.githubusercontent.com/freedomofkeima/rss-twilio-bot/master/screenshot2.png" width="400">
 
 
+## Requirements
+
+- Python 2.7
+- [Twilio trial account](https://www.twilio.com/)
+
 
 ## Format (user.json)
 
@@ -46,6 +51,15 @@ The RSS Feed URL above will give you an update for all first (ep. 1) release fro
 
 ## Installation
 
+It is recommended to use `virtualenv` instead of installing dependencies in global system with:
+
+```
+$ virtualenv venv
+$ . venv/bin/activate
+```
+
+After that, you can install Python dependencies with:
+
 ```
 $ pip install -r requirements.txt
 ```
@@ -57,6 +71,9 @@ Required TWILIO values (`main.py`):
 - TWILIO_PHONE_NUMBER
 
 You can get those values for free with [Twilio](https://www.twilio.com/) trial account. One of the side note of trial account is that you can only send your messages to [verified number](https://www.twilio.com/console/phone-numbers/verified). 
+
+Twilio phone number can be acquired by following the tutorial here: https://support.twilio.com/hc/en-us/articles/223136107-How-does-Twilio-s-Free-Trial-work-
+
 
 ## Run
 
@@ -73,5 +90,9 @@ For best usage, you need to set a **cron job** (e.g.: every 10 minutes) to run t
 
 - Add AWS Lambda (scheduled events) + S3 integration (`db.json` and `user.json`) to run this script serverless.
 
+
+## License
+
+MIT License.
 
 Last Updated: September 29, 2016
