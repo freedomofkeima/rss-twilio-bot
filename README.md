@@ -7,6 +7,9 @@ An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed
 
 <img src="https://raw.githubusercontent.com/freedomofkeima/rss-twilio-bot/master/screenshot.png" width="400">
 
+<img src="https://raw.githubusercontent.com/freedomofkeima/rss-twilio-bot/master/screenshot2.png" width="400">
+
+
 
 ## Format (user.json)
 
