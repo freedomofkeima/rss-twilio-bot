@@ -1,0 +1,2 @@
+feedparser==5.2.1
+twilio==5.6.0
