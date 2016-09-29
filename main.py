@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import feedparser
 import json
+import re
 from time import mktime
 from datetime import datetime
 from twilio.rest import TwilioRestClient
@@ -65,7 +66,14 @@ def process_user(user_name, user_data, db, twilio_client):
             return
         db[user_name]['is_first_hello_sent'] = 1
 
-    for url in user_data.get('subscribed_url', []):
+    for url_info in user_data.get('subscribed_urls', []):
+        url = url_info.get('url')
+
+        if not url:
+            continue
+
+        regex_pattern = url_info.get('pattern', "")
+
         last_updated_timestamp = last_updated_info.get(url, 0)
         latest_timestamp = last_updated_timestamp  # temporary variable
 
@@ -75,6 +83,12 @@ def process_user(user_name, user_data, db, twilio_client):
             continue
 
         for entry in d.get('entries', {}):
+            # Compare against regex_pattern if exists
+            if regex_pattern:
+                m = re.search(regex_pattern, entry['title'])
+                if not m:
+                    continue
+
             dt = datetime.fromtimestamp(mktime(entry['published_parsed']))
             feed_timestamp = int((dt - datetime(1970, 1, 1)).total_seconds())
 

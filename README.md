@@ -1,6 +1,6 @@
 # rss-twilio-bot
 
-An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed updates from http://www.nyaa.se/.
+An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed updates from http://www.nyaa.se/ (Anime) and http://mangastream.com/rss (Manga).
 
 
 ## Screenshot
@@ -14,14 +14,19 @@ An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed
 {
   "Subaru": {
     "phone_number": "+818012345678",
-    "subscribed_url": [
-      "http://www.nyaa.se/?page=rss&cats=1_37&term=720p+horriblesubs+01+mkv&minage=0&maxage=30"
+    "subscribed_urls": [
+        {
+            "url": "http://www.nyaa.se/?page=rss&cats=1_37&term=720p+horriblesubs+01+mkv&minage=0&maxage=30"
+        }
     ]
   },
   "Barusu": {
     "phone_number": "+818023456789",
-    "subscribed_url": [
-      "http://www.nyaa.se/?page=rss&cats=1_37&term=720p+horriblesubs+01+mkv&minage=0&maxage=30"
+    "subscribed_urls": [
+        {
+            "url": "http://mangastream.com/rss",
+            "pattern": "Shokugeki no Souma [0-9]+"
+        }
     ]
   }
 }
@@ -31,7 +36,7 @@ Each records will have a unique identifier of a record (in this case, user's nam
 
 `phone_number` should conform to Twilio phone number format.
 
-`subscribed_url` is a list of URLs feed which you want to get notification from if a new update occurs.
+`subscribed_urls` is a list of `url` feed (required) and `pattern` (optional, which is targeted to RSS `title` in `entries`) which you want to get notification from if a new update occurs.
 
 The RSS Feed URL above will give you an update for all first (ep. 1) release from [HorribleSubs](http://horriblesubs.info/).
 
