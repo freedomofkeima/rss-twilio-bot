@@ -76,7 +76,7 @@ def process_user(user_name, user_data, db, twilio_client):
 
         for entry in d.get('entries', {}):
             dt = datetime.fromtimestamp(mktime(entry['published_parsed']))
-            feed_timestamp = int((dt - datetime(1970,1,1)).total_seconds())
+            feed_timestamp = int((dt - datetime(1970, 1, 1)).total_seconds())
 
             # Take the uppermost RSS feed if the current value is still 0
             if last_updated_timestamp == 0:

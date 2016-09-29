@@ -5,7 +5,7 @@ An experimentation to use Twilio Trial SMS as a notification medium for RSS Feed
 
 ## Screenshot
 
-![SMS](https://raw.githubusercontent.com/freedomofkeima/rss-twilio-bot/master/screenshot.png)
+<img src="https://raw.githubusercontent.com/freedomofkeima/rss-twilio-bot/master/screenshot.png" width="400">
 
 
 ## Format (user.json)
@@ -41,7 +41,6 @@ The RSS Feed URL above will give you an update for all first (ep. 1) release fro
 ```
 $ pip install -r requirements.txt
 ```
-
 
 Required TWILIO values (`main.py`):
 
