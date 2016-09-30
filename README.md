@@ -54,8 +54,9 @@ The RSS Feed URL above will give you an update for all first (ep. 1) release fro
 It is recommended to use `virtualenv` instead of installing dependencies in global system with:
 
 ```
-$ virtualenv venv
-$ . venv/bin/activate
+$ cd <this project directory>
+$ virtualenv -p python27 venv
+$ source venv/bin/activate
 ```
 
 After that, you can install Python dependencies with:

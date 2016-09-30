@@ -1,0 +1,2 @@
+# This runs every 10 minutes, consult crontab.guru for time format
+*/10 * * * * /path/to/project/venv/bin/python /path/to/project/main.py
