@@ -54,8 +54,9 @@ The RSS Feed URL above will give you an update for all first (ep. 1) release fro
 It is recommended to use `virtualenv` instead of installing dependencies in global system with:
 
 ```
-$ virtualenv venv
-$ . venv/bin/activate
+$ cd <this project directory>
+$ virtualenv -p python27 venv
+$ source venv/bin/activate
 ```
 
 After that, you can install Python dependencies with:
@@ -84,7 +85,11 @@ $ python main.py
 ```
 
 For best usage, you need to set a **cron job** (e.g.: every 10 minutes) to run this script and check periodically.
-
+For Example:
+```
+*/10 * * * * /path/to/project/venv/bin/python /path/to/project/main.py
+```
+crontab.guru can help you for the human readable cron schedule
 
 ## Future Idea
 
