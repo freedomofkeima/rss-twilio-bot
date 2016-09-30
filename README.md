@@ -85,7 +85,11 @@ $ python main.py
 ```
 
 For best usage, you need to set a **cron job** (e.g.: every 10 minutes) to run this script and check periodically.
-
+For Example:
+```
+*/10 * * * * /path/to/project/venv/bin/python /path/to/project/main.py
+```
+crontab.guru can help you for the human readable cron schedule
 
 ## Future Idea
 
