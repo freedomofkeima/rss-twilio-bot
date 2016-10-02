@@ -13,8 +13,8 @@ TWILIO_AUTH_TOKEN = "TWILIO_AUTH_TOKEN_HERE"
 TWILIO_PHONE_NUMBER = "+12012345678"
 
 # {} will be replaced with user's name
-WELCOME_MESSAGE = "いらっしゃいませ、{} 様！"
-BODY_MESSAGE = "\"{}\" is now available, {} 様！"
+WELCOME_MESSAGE = "Welcome, {}!"
+BODY_MESSAGE = "\"{}\" is now available, {}!"
 
 DEFAULT_RECORD = {
     "is_first_hello_sent": 0,
